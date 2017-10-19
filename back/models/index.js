@@ -7,10 +7,13 @@ const config = require('config');
 
 const Sequelize = require('sequelize');
 
-const configPostgres = config.get('postgres');
+let postgresUrl = config.postgres.url;
+if (process.env.DATABASE_URL) {
+  postgresUrl = process.env.DATABASE_URL;
+}
 
-const sequelize = new Sequelize(config.postgres.url, {
-    logging: false,
+const sequelize = new Sequelize(postgresUrl, {
+  logging: false,
 });
 
 const user = sequelize.import(path.join(__dirname, 'user.model.js'));
