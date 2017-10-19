@@ -44,9 +44,6 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(express.static(path.join(__dirname, '../front/static')));
 
 app.use('/', routes);
