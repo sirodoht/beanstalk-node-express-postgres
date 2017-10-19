@@ -10,7 +10,6 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const favicon = require('serve-favicon');
-const config = require('config');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -122,7 +121,7 @@ app.use(function (err, req, res) {
   });
 });
 
-let port = config.webserver.port;
+let port = 3000;
 if (process.env.PORT) {
   port = process.env.PORT;
 }

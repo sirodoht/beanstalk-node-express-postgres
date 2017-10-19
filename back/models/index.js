@@ -3,11 +3,10 @@
  */
 
 const path = require('path');
-const config = require('config');
 
 const Sequelize = require('sequelize');
 
-let postgresUrl = config.postgres.url;
+let postgresUrl = 'postgres://marvy@127.0.0.1:5432/marvy';
 if (process.env.DATABASE_URL) {
   postgresUrl = process.env.DATABASE_URL;
 }
