@@ -6,7 +6,7 @@ const path = require('path');
 
 const Sequelize = require('sequelize');
 
-let postgresUrl = 'postgres://marvy@127.0.0.1:5432/marvy';
+var postgresUrl = 'postgres://sirodoht@127.0.0.1:5432/aspen';
 if (process.env.DATABASE_URL) {
   postgresUrl = process.env.DATABASE_URL;
 }

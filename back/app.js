@@ -121,7 +121,7 @@ app.use(function (err, req, res) {
   });
 });
 
-let port = 3000;
+var port = 3000;
 if (process.env.PORT) {
   port = process.env.PORT;
 }
