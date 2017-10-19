@@ -11,6 +11,7 @@ let postgresUrl = config.postgres.url;
 if (process.env.DATABASE_URL) {
   postgresUrl = process.env.DATABASE_URL;
 }
+console.log('Connecting with database URL:', postgresUrl);
 
 const sequelize = new Sequelize(postgresUrl, {
   logging: false,
