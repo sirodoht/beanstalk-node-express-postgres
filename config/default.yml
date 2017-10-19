@@ -3,5 +3,5 @@ webserver:
   sessionSecret: "these are the words of the secret"
 
 postgres:
-  url: "postgres://sirodoht@127.0.0.1:5432/aspen"
+  url: "postgres://marvy@127.0.0.1:5432/marvy"
 

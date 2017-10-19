@@ -1,6 +1,6 @@
 /**
- * aspen
- * Node.js web application boilerplate.
+ * Marvy
+ * Node / Express / PostgreSQL boilerplate for AWS Elastic Beanstalk
  *
  * @author Theodore Keloglou
  * @file Main application boot file.

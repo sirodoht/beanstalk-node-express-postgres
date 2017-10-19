@@ -1,4 +1,4 @@
-# beanstalk-node-express-postgres
+# marvy
 
 > Node / Express / PostgreSQL boilerplate for AWS Elastic Beanstalk
 
@@ -18,7 +18,7 @@
 Start PostgreSQL. Then:
 
 ```sh
-$ createdb aspen  # postgres tool for db creation via shell
+$ createdb marvy  # postgres tool for db creation via shell
 $ npm install
 $ npm start
 ```
