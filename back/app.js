@@ -13,8 +13,6 @@ const favicon = require('serve-favicon');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 
 const routes = require('./routes/index');
 const models = require('./models');
@@ -48,47 +46,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.use(new LocalStrategy({
-  usernameField: 'username',
-  passwordField: 'password',
-  // session: false,
-}, function (username, password, done) {
-  models.User.findOne({
-    where: {
-      username: username
-    }
-  }).then(function (user) {
-    if (!user) {
-      return done(null, false, {
-        message: 'Incorrect username.'
-      });
-    }
-    if (!user.validPassword(password)) {
-      return done(null, false, {
-        message: 'Incorrect password.'
-      });
-    }
-    return done(null, user);
-  }).catch(function (err) {
-    console.log('Passport error:', err);
-  });
-}
-));
-
-passport.serializeUser(function (user, done) {
-  done(null, user.username);
-});
-
-passport.deserializeUser(function (username, done) {
-  models.User.findOne({
-    where: {
-      username
-    }
-  }).then(function (user) {
-    done(null, user);
-  });
-});
 
 app.use(express.static(path.join(__dirname, '../front/static')));
 
