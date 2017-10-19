@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+
+# npm dependencies
+node_modules
+
+# Static files
+front/static/script.js
+front/static/style.css
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
